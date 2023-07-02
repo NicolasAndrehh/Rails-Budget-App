@@ -19,7 +19,7 @@ class RecordsController < ApplicationController
 
   # POST /records or /records.json
   def create
-    @record = Record.new(record_params)
+    @record = Record.new(author_id: current_user.id, **record_params)
 
     respond_to do |format|
       if @record.save
@@ -35,7 +35,7 @@ class RecordsController < ApplicationController
   # PATCH/PUT /records/1 or /records/1.json
   def update
     respond_to do |format|
-      if @record.update(record_params)
+      if @record.update(author_id: current_user.id, **record_params)
         format.html { redirect_to record_url(@record), notice: 'Record was successfully updated.' }
         format.json { render :show, status: :ok, location: @record }
       else
