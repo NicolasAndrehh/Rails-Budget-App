@@ -90,4 +90,26 @@ $text-color: #434b54;
         }
     }
 
+    .new-record-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        text-decoration: none;
+        font-size: 0.85rem;
+        background-color: #fff;
+        border: 2px solid $secondary-color;
+        border-radius: 0.25rem;
+        font-weight: bold;
+        color: $secondary-color;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            background-color: $secondary-color;
+            color: #fff;
+        }
+    }
+
 }

@@ -11,7 +11,9 @@ Rails.application.routes.draw do
     end
   end
   
-
-  resources :records
-  resources :categories
+  
+  resources :categories do
+    resources :expenses
+  end
+    
 end
