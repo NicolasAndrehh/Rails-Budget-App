@@ -1,16 +1,19 @@
-<p style="color: green"><%= notice %></p>
+<%= stylesheet_link_tag "categories_index" %>
 
 <%= link_to "Log Out", destroy_user_session_path, data: {turbo_method: :delete}, class: 'sign-out-button' %>
+<section class='categories-section'>
+  <h1 class='title'>Categories</h1>
 
-<h1>Categories</h1>
+  <div id="categories">
+    <% @categories.each do |category| %>
+      <%= link_to category do %>
+        <%= render category %>
+      <% end %>
+    <% end %>
+  </div>
 
-<div id="categories">
-  <% @categories.each do |category| %>
-    <%= render category %>
-    <p>
-      <%= link_to "Show this category", category %>
-    </p>
-  <% end %>
+</section>
+
+<div class="btn-container">
+  <%= link_to "New category", new_category_path, class: "btn" %>
 </div>
-
-<%= link_to "New category", new_category_path %>
