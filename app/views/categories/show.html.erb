@@ -1,10 +1,12 @@
-<p style="color: green"><%= notice %></p>
+<%= stylesheet_link_tag "categories_show" %>
 
-<%= render @category %>
+<section class="category-section">
+  <%= render @category %>
 
-<div>
-  <%= link_to "Edit this category", edit_category_path(@category) %> |
-  <%= link_to "Back to categories", categories_path %>
+  <div class="actions">
+    <%= link_to "Edit category", edit_category_path(@category), class: "btn" %>
+    <p class="total-spent">Total spent: <span>$100</span></p>
+    <%= button_to "Delete category", @category, method: :delete, class: "btn delete-btn" %>
+  </div>
 
-  <%= button_to "Destroy this category", @category, method: :delete %>
-</div>
+</section>
