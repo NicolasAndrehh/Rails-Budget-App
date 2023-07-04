@@ -7,7 +7,6 @@ RSpec.describe 'Expense integration tests', type: :feature do
     @user = User.create!(name: 'user', email: 'user@gmail.com', password: 'password')
     @category = Category.create!(name: 'Mc Donalds', icon: 'food_icon.webp', author_id: @user.id)
 
-
     login_as(@user, scope: :user)
   end
 
