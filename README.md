@@ -158,11 +158,9 @@ If you like this project you can give it a star!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thanks Microverse for this learning opportunity.
+I would like to thanks Gregoire Vella for the [Original design idea](https://www.behance.net/gregoirevella).
 
 <p align="right"><a href="#readme-top">Back to top</a></p>
-
-<!-- FAQ (optional) -->
 
 ## 📝 License <a name="license"></a>
 
