@@ -117,7 +117,7 @@ To run tests, run the following command:
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-[Live Demo](https://budget-app-nz9l.onrender.com)
+[Live Demo](https://budget-app-gzlz.onrender.com)
 
 ## 👥 Authors <a name="authors"></a>
 
