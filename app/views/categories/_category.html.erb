@@ -1,12 +1,12 @@
-<div id="<%= dom_id category %>">
-  <p>
-    <strong>Name:</strong>
-    <%= category.name %>
-  </p>
+<div id="<%= dom_id category %>" class='category-card'>
+  <div class="category-group">
+    <img src="<%= asset_path(category.icon) %>" alt="Category Icon">
+    <div class="category-info">
+      <p class="category-name"><%= category.name %></p>
 
-  <p>
-    <strong>Icon:</strong>
-    <%= category.icon %>
-  </p>
+      <p class="category-date"><%= category.created_at.strftime("%d %B %Y") %></p>
+    </div>
+  </div>
 
+  <p class="category-total-spent">$<%= category.expenses.sum(:amount) %></p>
 </div>

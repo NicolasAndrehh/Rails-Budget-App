@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_01_222314) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_03_205538) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,22 +22,22 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_01_222314) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "record_categories", force: :cascade do |t|
-    t.integer "record_id"
+  create_table "expense_categories", force: :cascade do |t|
+    t.integer "expense_id"
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_record_categories_on_category_id"
-    t.index ["record_id"], name: "index_record_categories_on_record_id"
+    t.index ["category_id"], name: "index_expense_categories_on_category_id"
+    t.index ["expense_id"], name: "index_expense_categories_on_expense_id"
   end
 
-  create_table "records", force: :cascade do |t|
+  create_table "expenses", force: :cascade do |t|
     t.integer "author_id"
     t.string "name"
     t.float "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["author_id"], name: "index_records_on_author_id"
+    t.index ["author_id"], name: "index_expenses_on_author_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -53,7 +53,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_01_222314) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "record_categories", "categories"
-  add_foreign_key "record_categories", "records"
-  add_foreign_key "records", "users", column: "author_id"
+  add_foreign_key "expense_categories", "categories"
+  add_foreign_key "expense_categories", "expenses"
+  add_foreign_key "expenses", "users", column: "author_id"
 end
