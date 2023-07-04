@@ -18,12 +18,12 @@ class CategoriesController < ApplicationController
   # GET /categories/new
   def new
     @category = Category.new
-    @title = "New category"
+    @title = 'New category'
   end
 
   # GET /categories/1/edit
   def edit
-    @title = "Edit category"
+    @title = 'Edit category'
   end
 
   # POST /categories or /categories.json
