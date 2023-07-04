@@ -1,6 +1,7 @@
 class ExpensesController < ApplicationController
   before_action :set_expense, only: %i[show edit update destroy]
   before_action :authenticate_user!
+  load_and_authorize_resource
 
   # GET /expenses or /expenses.json
   def index
@@ -12,6 +13,12 @@ class ExpensesController < ApplicationController
 
   # GET /expenses/new
   def new
+    @category = Category.find(params[:category_id])
+    
+    if @category.author_id != current_user.id
+      redirect_to categories_path, notice: 'You are not allowed to create expenses in this category'
+    end
+
     @expense = Expense.new
     @title = 'New expense'
   end
