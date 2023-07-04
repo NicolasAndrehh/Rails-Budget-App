@@ -3,69 +3,66 @@ $secondary-color: #5fb523;
 $text-color: #434b54;
 
 .categories-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1rem 0 1rem;
+  height: 90%;
+
+  .title {
+    font-size: 2rem;
+  }
+
+  #categories {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
     gap: 1rem;
-    padding: 1rem 1rem 0rem 1rem;
-    height: 90%;
+    width: 100%;
 
-    .title {
-        font-size: 2rem;
-    }
+    a {
+      text-decoration: none;
+      color: $text-color;
 
-    #categories {
+      .category-card {
         display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        width: 100%;
+        justify-content: space-between;
+        align-items: flex-start;
+        background-color: #fff;
+        box-shadow: 0 0 1rem #0000002f;
+        padding: 0.5rem;
 
-        a {
-            text-decoration: none;
-            color: $text-color;
+        .category-group {
+          display: flex;
+          gap: 1rem;
 
-            .category-card {
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-                background-color: #fff;
-                box-shadow: 0 0 1rem #0000002f;
-                padding: 0.5rem;
+          img {
+            width: 4.5rem;
+            height: 4.5rem;
+          }
 
-                .category-group {
-                    display: flex;
-                    gap: 1rem;
+          .category-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
 
-                    img {
-                        width: 4.5rem;
-                        height: 4.5rem;
-                    }
-
-                    .category-info {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-between;
-
-                        .category-name {
-                            font-size: 1.2rem;
-                            font-weight: bold;
-                        }
-
-                        .category-date {
-                            font-size: 0.9rem;
-                            color: #181818a2;
-                        }
-                    }
-
-                }
-
-                .category-total-spent {
-                    font-weight: bold;
-                }
+            .category-name {
+              font-size: 1.2rem;
+              font-weight: bold;
             }
 
+            .category-date {
+              font-size: 0.9rem;
+              color: #181818a2;
+            }
+          }
         }
-    }
 
+        .category-total-spent {
+          font-weight: bold;
+        }
+      }
+    }
+  }
 }
