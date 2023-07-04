@@ -14,7 +14,7 @@ class ExpensesController < ApplicationController
   # GET /expenses/new
   def new
     @category = Category.find(params[:category_id])
-    
+
     if @category.author_id != current_user.id
       redirect_to categories_path, notice: 'You are not allowed to create expenses in this category'
     end
