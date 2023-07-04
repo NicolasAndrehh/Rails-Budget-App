@@ -96,4 +96,36 @@ RSpec.describe 'Category integration tests', type: :feature do
             expect(page).to have_button('Create Category')
         end
     end
+
+    describe 'edit page' do
+        before { visit edit_category_path(@category) }
+
+        it 'should display the title "Edit category"' do
+            expect(page).to have_content('Edit category')
+        end
+
+        it 'should display the category name field' do
+            expect(page).to have_field('category_name')
+        end
+
+        it 'should display 9 category icon fields to select from' do
+            expect(page).to have_field('category_icon_food_icon_webp')
+            expect(page).to have_field('category_icon_clothing_icon_webp')
+            expect(page).to have_field('category_icon_travel_icon_webp')
+            expect(page).to have_field('category_icon_saving_icon_webp')
+            expect(page).to have_field('category_icon_entertainment_icon_webp')
+            expect(page).to have_field('category_icon_health_icon_webp')
+            expect(page).to have_field('category_icon_housing_icon_webp')
+            expect(page).to have_field('category_icon_education_icon_webp')
+            expect(page).to have_field('category_icon_other_icon_webp')
+        end
+
+        it 'should display the img of the 9 icons' do
+            expect(page).to have_selector("img", count: 9)
+        end
+
+        it 'should display a button to update the category' do
+            expect(page).to have_button('Update Category')
+        end
+    end
 end
