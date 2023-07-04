@@ -1,5 +1,6 @@
 class ExpensesController < ApplicationController
   before_action :set_expense, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /expenses or /expenses.json
   def index
@@ -13,6 +14,7 @@ class ExpensesController < ApplicationController
   # GET /expenses/new
   def new
     @expense = Expense.new
+    @title = 'New expense'
   end
 
   # GET /expenses/1/edit

@@ -1,23 +1,30 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[show edit update destroy]
+  before_action :authenticate_user!
 
   # GET /categories or /categories.json
   def index
     @categories = Category.all
+    @title = 'Categories'
   end
 
   # GET /categories/1 or /categories/1.json
   def show
-    @expenses = ExpenseCategory.where(category_id: params[:id]).map(&:expense)
+    @category = Category.find(params[:id])
+    @expenses = ExpenseCategory.where(category_id: params[:id]).map(&:expense).sort_by(&:created_at).reverse
+    @title = "#{@category.name} category"
   end
 
   # GET /categories/new
   def new
     @category = Category.new
+    @title = "New category"
   end
 
   # GET /categories/1/edit
-  def edit; end
+  def edit
+    @title = "Edit category"
+  end
 
   # POST /categories or /categories.json
   def create

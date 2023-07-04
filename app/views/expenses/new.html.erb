@@ -1,9 +1,13 @@
-<h1>New expense</h1>
+<%= stylesheet_link_tag "expense_new" %>
 
-<%= render "form", expense: @expense %>
+<%= render "shared/navbar", category: params[:category_id] %>
 
-<br>
+<section class="new-expense-section">
+  <%= render "form", expense: @expense %>
 
-<div>
-  <%= link_to "Back to expenses", category_expenses_path %>
-</div>
+  <br>
+
+  <div>
+    <%= link_to "Back to expenses", category_expenses_path %>
+  </div>
+</section>

@@ -1,5 +1,7 @@
 <%= stylesheet_link_tag "categories_show" %>
 
+<%= render 'shared/navbar', category: @category %>
+
 <section class="category-section">
   <%= render @category %>
 
@@ -9,7 +11,9 @@
     <%= button_to "Delete category", @category, method: :delete, class: "btn delete-btn" %>
   </div>
 
-  <h2>Records</h2>
+  <hr>
+
+  <h2>Expenses</h2>
 
   <div id="expenses">
     <% @expenses.each do |expense| %>

@@ -23,8 +23,15 @@ main {
     color: red !important;
 }
 
+.notice,
+.alert {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
 .btn-container {
-    width: 100%;
+    width: 100vw;
     background-color: $secondary-color;
     padding: 1rem;
 
